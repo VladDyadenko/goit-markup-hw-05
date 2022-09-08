@@ -2,7 +2,6 @@ html {
     box-sizing: border-box;
 }
 
-
 :root {
     --praymare-text-color: #757575;
     --title-text-color: #212121;
@@ -296,6 +295,12 @@ p {
     display: flex;
 }
 
+.descr-benefits {
+    width: 270px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
 /* діяльність */
 
 .work-section{
@@ -314,11 +319,45 @@ p {
     padding-left: 0; 
 }
 
-.descr-benefits {
-    width: 270px;
-    font-size: 14px;
-    line-height: 1.7;
+.img-work {
+    display: block;
 }
+
+.desktop {
+    padding: 27px 106px;
+}
+.applications-overlay {
+    padding: 27px 112px;
+}
+
+.design-overlay {
+    padding: 27px 94px;
+}
+
+.work-img-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.work-overlay {
+    width: 370px;
+    position: absolute;
+    bottom: 0;
+    background: rgba(47, 48, 58, 0.8);
+
+}
+
+.work-titl {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--praymary-background-color);
+}
+
+
+
+
 
 /* команда */
 .team .team-link {
@@ -395,7 +434,6 @@ p {
 .team .social-link:not(:last-child) {
     margin-right: 10px;
 }
-
 
 
 .descr-job {
@@ -532,12 +570,9 @@ p {
 /* оверлей */
 
 .titl-overlay {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
     font-size: 18px;
     line-height: 1.55;
-    letter-spacing: 0.03em;
+
 }
 
 .img-portfolio-overlay {
