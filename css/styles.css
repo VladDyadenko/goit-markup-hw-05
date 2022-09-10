@@ -192,17 +192,14 @@ p {
     letter-spacing: 0.02em;
     color:var(--title-text-color);
     text-decoration: none;
-
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 240ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
 .contact-info {
     display: flex;
     align-items: center;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 240ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 .icon-smartphone,
@@ -277,18 +274,20 @@ p {
     letter-spacing: 0.06em;
     color:var(--praymary-background-color);
     background:var(--logo-akcent-color);
+
+    
    }
 
    /* модальне вікно */
 
    .backdrop.is-hidden {
-    visibility: hidden;
     opacity: 0;
     pointer-events: none;
+
+    
    }
 
    .backdrop {
-    /* z-index: -1; */
     position: fixed;
     top: 0;
     left: 0;
@@ -297,9 +296,12 @@ p {
     background: rgba(0, 0, 0, 0.2);
     opacity: 1;
     visibility: visible;
-    transition: opasity 240ms cubic-bezier(0.4, 0, 0.2, 1) visible 240ms cubic-bezier(0.4, 0, 0.2, 1);
 
+    transition: opacity 240ms cubic-bezier(0.4, 0, 0.2, 1);
+   }
 
+   .backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) translateY(-50%);
    }
 
    .modal{
@@ -308,13 +310,32 @@ p {
     height: 581px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background: #FFFFFF;
+    background-color: var(--praymary-background-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    opacity: 20;
+    opacity: 1;
+
+    transform: translate(-50%, -50%) translateY(0);
+    transition: transform 240ms cubic-bezier(0.4, 0, 0.2, 1);
+      
    }
 
+   .data-modal-close {
+    margin: 0;
+    border: none;
+    position: absolute;
+    padding: 6px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background:var(--praymary-background-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    top: 8px;
+    right: 8px;
+
+    animation: borderradius 1.5s ease;
+
+   }
 
 /* переваги */
 
@@ -380,6 +401,7 @@ p {
 
 .img-work {
     display: block;
+
 }
 
 .desktop {
@@ -396,6 +418,7 @@ p {
 .work-img-overlay {
     position: relative;
     overflow: hidden;
+    z-index: -1;
 }
 
 .work-overlay {
@@ -478,8 +501,7 @@ p {
     border-radius: 50%;
     background-color: var(--praymary-background-color);
 
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 240ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -543,9 +565,7 @@ p {
     min-width: 170px;
     border: 1px solid var(--icon-color);
 
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
+    transition: color 240ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients {
     display: flex;
@@ -574,6 +594,7 @@ p {
     padding-left: 0;
     display: flex;
     flex-wrap: wrap;
+    /* width: calc((100%-30px)/3); */
     gap: 30px;
     flex-basis: 13.3%;
 }
@@ -659,8 +680,7 @@ p {
     background-color:var(--logo-akcent-color);
     
     transform: translateY(100%);
-    transition-duration: 240ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 240ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .examples-img .example-list:hover .examples-link .overlay,
@@ -672,8 +692,7 @@ p {
 /* оверлей */
 
 .example-list {
-    transition-duration: 240ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 240ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .example-list:hover,
@@ -691,16 +710,15 @@ p {
     font-size: 16px;
     line-height: 1.63;
     border-radius: 4px;
-    background: var(--button-background-color);
+    background-color: var(--button-background-color);
     color: var(--title-text-color);
 
-    transition-duration: 240ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow, color, background-color  240ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
 .button:focus {
-    background: var(--logo-akcent-color);
+    background-color: var(--logo-akcent-color);
     color: var(--praymary-background-color);
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 25%);
 }
@@ -736,8 +754,7 @@ p {
     margin-left: 0;
     color: rgba(255, 255, 255, 0.6);
 
-    transition-duration: 240ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 240ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -781,9 +798,7 @@ p {
     line-height: 1.7;
     color: var(--praymary-background-color);
 
-    transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 240ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -833,8 +848,7 @@ p {
     background-color: var(--social-footer-background);
     border-radius: 50%;
 
-    transition-duration: 240ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 240ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
