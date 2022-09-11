@@ -49,7 +49,7 @@ p {
 }
 
 
-/* скрыть h2 Переваги компанії, Портфолио */
+/* скрыть h2 */
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -192,14 +192,16 @@ p {
     letter-spacing: 0.02em;
     color:var(--title-text-color);
     text-decoration: none;
-    transition: color 240ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
 .contact-info {
     display: flex;
     align-items: center;
-    transition: color 240ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 .icon-smartphone,
@@ -281,10 +283,9 @@ p {
    /* модальне вікно */
 
    .backdrop.is-hidden {
+    visibility: hidden;
     opacity: 0;
     pointer-events: none;
-
-    
    }
 
    .backdrop {
@@ -297,7 +298,7 @@ p {
     opacity: 1;
     visibility: visible;
 
-    transition: opacity 240ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
    }
 
    .backdrop.is-hidden .modal {
@@ -306,36 +307,39 @@ p {
 
    .modal{
     position: absolute;
+    opacity: 1;
+    
     width: 528px;
     height: 581px;
     top: 50%;
     left: 50%;
+
     background-color: var(--praymary-background-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    opacity: 1;
+
 
     transform: translate(-50%, -50%) translateY(0);
-    transition: transform 240ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
       
    }
 
    .data-modal-close {
-    margin: 0;
-    border: none;
     position: absolute;
+    top: 8px;
+    right: 8px;
     padding: 6px;
     width: 30px;
     height: 30px;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+
     border-radius: 50%;
     background:var(--praymary-background-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
-    top: 8px;
-    right: 8px;
 
-    animation: borderradius 1.5s ease;
-
-   }
+    }
 
 /* переваги */
 
@@ -345,9 +349,9 @@ p {
     height: 120px;
     padding: 25px 100px;
     margin-bottom: 30px;
+
     background-color: var(--button-background-color);
     border-radius: 4px;
-
 
 }
 
@@ -358,12 +362,12 @@ p {
 
 .titl-benefits {
     margin-bottom: 10px;
-
     width: 270px;
     font-size: 14px;
+    text-transform: uppercase;
     line-height: 1.14;
     color: var(--title-text-color);
-    text-transform: uppercase;
+
 }
 
 .main-benefits li:not(:last-child) {
@@ -438,15 +442,13 @@ p {
 }
 
 
-
-
-
 /* команда */
 .team .team-link {
-    background-color: var(--praymary-background-color);
-    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
     border-radius: 0px 0px 4px 4px;
     padding-bottom: 30px;
+    background-color: var(--praymary-background-color);
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
+
 }
 
 .section.section-team {
@@ -501,7 +503,7 @@ p {
     border-radius: 50%;
     background-color: var(--praymary-background-color);
 
-    transition: color 240ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -565,7 +567,7 @@ p {
     min-width: 170px;
     border: 1px solid var(--icon-color);
 
-    transition: color 240ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients {
     display: flex;
@@ -594,9 +596,9 @@ p {
     padding-left: 0;
     display: flex;
     flex-wrap: wrap;
-    /* width: calc((100%-30px)/3); */
     gap: 30px;
-    flex-basis: 13.3%;
+    flex-basis: 1.13%;
+
 }
 
 .button {
@@ -680,7 +682,7 @@ p {
     background-color:var(--logo-akcent-color);
     
     transform: translateY(100%);
-    transition: transform 240ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .examples-img .example-list:hover .examples-link .overlay,
@@ -692,7 +694,7 @@ p {
 /* оверлей */
 
 .example-list {
-    transition: box-shadow 240ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .example-list:hover,
@@ -713,7 +715,7 @@ p {
     background-color: var(--button-background-color);
     color: var(--title-text-color);
 
-    transition: box-shadow, color, background-color  240ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow  250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
@@ -754,7 +756,7 @@ p {
     margin-left: 0;
     color: rgba(255, 255, 255, 0.6);
 
-    transition: color 240ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -798,7 +800,7 @@ p {
     line-height: 1.7;
     color: var(--praymary-background-color);
 
-    transition: color 240ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -848,7 +850,7 @@ p {
     background-color: var(--social-footer-background);
     border-radius: 50%;
 
-    transition: background-color 240ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
