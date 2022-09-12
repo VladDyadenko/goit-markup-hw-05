@@ -83,20 +83,18 @@ p {
     text-decoration: none;
 }
 
+/* шапка, навигация */
 
 .link:hover,
 .link:focus,
 .link:active,
-.header-contacts .current,
-.site-nav .nav-link:hover,
-.site-nav .nav-link:focus, 
-.site-nav .nav-link:active,
-.site-nav.general-nav .current {
+.link.current {
     color: var(--logo-akcent-color);
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
    
 }
 
-/* шапка, навигация */
 
 .header-contacts .contact:nth-child(1) {
     margin-right: 50px;
@@ -185,7 +183,7 @@ p {
 .site-nav.general-nav {
     padding-left: 0;
 }
-.site-nav .nav-link{
+.nav-link{
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
@@ -200,20 +198,21 @@ p {
 .contact-info {
     display: flex;
     align-items: center;
-
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
-.icon-smartphone,
-.icon-envelope {
+.icon {
     margin-right: 10px;
-    fill: var(--praymare-text-color)
+    fill: var(--praymare-text-color);
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
            
 }
-.contact-info:hover > .icon,
-.contact-info:focus>.icon,
-.contact-info:active>.icon {
-    fill:var(--logo-akcent-color);
+.contact:hover .icon,
+.contact:focus .icon,
+.contact:active .icon {
+    fill: var(--logo-akcent-color);
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-info {
@@ -223,6 +222,9 @@ p {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--praymare-text-color);
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 /* головна частина */
@@ -286,6 +288,9 @@ p {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
    }
 
    .backdrop {
@@ -301,28 +306,27 @@ p {
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
    }
 
-   .backdrop.is-hidden .modal {
-    transform: translate(-50%, -50%) translateY(-50%);
-   }
+
 
    .modal{
     position: absolute;
     opacity: 1;
-    
     width: 528px;
     height: 581px;
     top: 50%;
     left: 50%;
-
+    transform: translate(-50%,-50%);
     background-color: var(--praymary-background-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 
-
-    transform: translate(-50%, -50%) translateY(0);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      
+    transform: scale(1), translate(-50%, -50%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);  
    }
+
+    .backdrop.is-hidden .modal {
+    transform: scale(0.3);
+    }
 
    .data-modal-close {
     position: absolute;
@@ -334,7 +338,6 @@ p {
     margin: 0;
     border: none;
     cursor: pointer;
-
     border-radius: 50%;
     background:var(--praymary-background-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -495,7 +498,17 @@ p {
 .team-icon {
     padding: 12px;
     fill:var(--icon-color);
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
  
+}
+
+.social-link:hover .team-icon,
+.social-link:focus .team-icon {
+    fill: var(--praymary-background-color);
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 
@@ -503,20 +516,19 @@ p {
     border-radius: 50%;
     background-color: var(--praymary-background-color);
 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
 .social-link:hover,
 .social-link:focus {
-    background-color: #2196F3;
+    background-color: var(--logo-akcent-color);
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
-.social-link:hover> .links .team-icon,
-.social-link:focus>.links .team-icon {
-    fill: #FFFFFF;
-    
-}
+
 
 
 .team .social-link:not(:last-child) {
@@ -548,16 +560,23 @@ p {
 .client-icon {
     display: block;
     fill: var(--icon-color);
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .client-link:hover,
 .client-link:focus{
     border: 1px solid var(--logo-akcent-color);
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.client-link:hover> .icon-link .client-icon,
-.client-link:focus>.icon-link .client-icon {
+.client-link:hover .client-icon,
+.client-link:focus .client-icon {
     fill: var(--logo-akcent-color);
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -567,7 +586,7 @@ p {
     min-width: 170px;
     border: 1px solid var(--icon-color);
 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients {
     display: flex;
@@ -688,6 +707,8 @@ p {
 .examples-img .example-list:hover .examples-link .overlay,
 .examples-img .example-list:focus .examples-link .overlay {
     transform: translateY(0);
+
+
 }
 
 
@@ -723,6 +744,9 @@ p {
     background-color: var(--logo-akcent-color);
     color: var(--praymary-background-color);
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 25%);
+
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 
@@ -819,6 +843,8 @@ p {
 .contact-footer:hover,
 .contact-footer:focus {
     color: var(--logo-akcent-color);
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-titl {
@@ -857,6 +883,9 @@ p {
 .social-link-footer:hover,
 .social-link-footer:focus {
     background-color: var(--logo-akcent-color);
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .footer-social-conteiner {
@@ -874,6 +903,7 @@ p {
 .social-link-footer:not(:last-child) {
     margin-right: 10px;
 }
+
 
 .footer-icon {
     padding: 12px;
